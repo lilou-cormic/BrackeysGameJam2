@@ -13,42 +13,67 @@ public class Lovable : MonoBehaviour
 
     public bool IsInLove { get; private set; }
 
-    public List<Lovable> Lovers { get; } = new List<Lovable>();
+    public bool IsLoved { get; private set; }
 
-    public bool _isMoving = false;
+    private Lovable LoveInterest { get; set; }
 
-    public bool _isRotating = false;
+    private bool _isMoving = false;
 
-    public float _targetRotation;
+    private bool _isRotating = false;
 
-    public Vector3 _targetPosition;
+    private float _targetRotation;
+
+    private Vector3 _targetPosition;
 
     private Vector3 _velocity;
 
-    private void Start()
+    [SerializeField]
+    private GameObject HeartsPrefab = null;
+
+    [SerializeField]
+    private AudioSource WinAudioSource = null;
+
+    [SerializeField]
+    private AudioSource RotateAudioSource = null;
+
+    private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
+    public const int UpRotation = 0;
+    public const int RightRotation = 270;
+    public const int DownRotation = 180;
+    public const int LeftRotation = 90;
+
+    public void SetRotation(int rotation)
+    {
+        _targetRotation = rotation;
+
+        EndRotation();
+    }
+
     public void ChangeDirection()
     {
+        RotateAudioSource.Play();
+
         _targetRotation = ((rb.rotation - 90) + 360) % 360;
         _isRotating = true;
     }
 
-    private void OnMouseUp()
-    {
-        if (IsInLove)
-            return;
+    //private void OnMouseUp()
+    //{
+    //    if (IsInLove)
+    //        return;
 
-        if (_isRotating)
-            EndRotation();
+    //    if (_isRotating)
+    //        EndRotation();
 
-        if (CanFallInLove())
-            FallInLove();
-        else if (!IsInLove)
-            ChangeDirection();
-    }
+    //    if (CanFallInLove())
+    //        FallInLove();
+    //    else if (!IsInLove)
+    //        ChangeDirection();
+    //}
 
     public bool CanFallInLove()
     {
@@ -64,10 +89,14 @@ public class Lovable : MonoBehaviour
     {
         EndRotation();
 
+        Instantiate(HeartsPrefab, transform);
         IsInLove = true;
 
         var lovable = GetLoveInSight();
-        lovable.Lovers.Add(this);
+        LoveInterest = lovable;
+
+        if (lovable.LoveInterest != this)
+            LevelManager.Lovables--;
 
         transform.SetParent(lovable.transform);
 
@@ -80,11 +109,6 @@ public class Lovable : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
-
         if (_isMoving)
         {
             float distance = Vector3.Distance(transform.position, _targetPosition);
@@ -110,6 +134,43 @@ public class Lovable : MonoBehaviour
                 rb.rotation = Mathf.LerpAngle(rb.rotation, _targetRotation, 30 * Time.deltaTime);
             }
         }
+
+        if (IsInLove || _isMoving || _isRotating)
+            return;
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+            if (GetComponentInChildren<BoxCollider2D>().OverlapPoint(mousePosition))
+            {
+                DoLeftClick();
+                return;
+            }
+        }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+            if (GetComponentInChildren<BoxCollider2D>().OverlapPoint(mousePosition))
+            {
+                DoRightClick();
+                return;
+            }
+        }
+    }
+
+    private void DoLeftClick()
+    {
+        if (CanFallInLove())
+            FallInLove();
+    }
+
+    private void DoRightClick()
+    {
+        if (!IsInLove)
+            ChangeDirection();
     }
 
     private void EndRotation()
@@ -124,5 +185,17 @@ public class Lovable : MonoBehaviour
         transform.position = _targetPosition;
 
         _isMoving = false;
+
+        if (LevelManager.Lovables == 1)
+            StartCoroutine(Win());
+    }
+
+    private IEnumerator Win()
+    {
+        WinAudioSource.Play();
+
+        yield return new WaitForSeconds(1);
+
+        LevelManager.Win();
     }
 }
