@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f201b8a72e993049954dc9980833538, type: 3}
-  m_Name: Level1
+  m_Name: Level4
   m_EditorClassIdentifier: 
-  Number: 1
-  DescriptionText: Left click or tap a Cube to rotate it clockwise. If another Cube
-    is in its line of sight, it will fall in love and join it instead.
-  LevelLayout: "__\r\n__\r\n__WWWWWWWWWWWWWWWW\r\n__W              W \r\n__W   L    U
-    \ WWWW\r\n__W           W\r\n__W           W\r\n__WWWWWWWWWWWWW\r\n__\r\n__"
+  Number: 4
+  DescriptionText: 
+  LevelLayout: "__      WWWWWWWW\r\n__   WWWW      WWW\r\n__WWWW     D     W\r\n__W
+    \             W\r\n__W              W\r\n__W   L   U      W\r\n__W              W\r\n__WWWWWW
+    \ R  WWWWW\r\n__     W     W\r\n__     WWWWWWW"

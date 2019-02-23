@@ -7,6 +7,7 @@ public class LevelDef : ScriptableObject
 {
     public int Number;
 
+    [TextArea]
     public string DescriptionText;
 
     [TextArea(10, 10)]

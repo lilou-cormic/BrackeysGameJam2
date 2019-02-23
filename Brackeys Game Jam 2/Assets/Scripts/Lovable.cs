@@ -61,19 +61,19 @@ public class Lovable : MonoBehaviour
         _isRotating = true;
     }
 
-    //private void OnMouseUp()
-    //{
-    //    if (IsInLove)
-    //        return;
+    private void OnMouseUp()
+    {
+        if (IsInLove)
+            return;
 
-    //    if (_isRotating)
-    //        EndRotation();
+        if (_isRotating)
+            EndRotation();
 
-    //    if (CanFallInLove())
-    //        FallInLove();
-    //    else if (!IsInLove)
-    //        ChangeDirection();
-    //}
+        if (CanFallInLove())
+            FallInLove();
+        else if (!IsInLove)
+            ChangeDirection();
+    }
 
     public bool CanFallInLove()
     {
@@ -87,8 +87,6 @@ public class Lovable : MonoBehaviour
 
     public void FallInLove()
     {
-        EndRotation();
-
         Instantiate(HeartsPrefab, transform);
         IsInLove = true;
 
@@ -128,6 +126,9 @@ public class Lovable : MonoBehaviour
             if (Mathf.Abs(Mathf.DeltaAngle(rb.rotation, _targetRotation)) < 0.01f)
             {
                 EndRotation();
+
+                if (CanFallInLove())
+                    FallInLove();
             }
             else
             {
@@ -135,30 +136,30 @@ public class Lovable : MonoBehaviour
             }
         }
 
-        if (IsInLove || _isMoving || _isRotating)
-            return;
+        //if (IsInLove || _isMoving || _isRotating)
+        //    return;
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            if (GetComponentInChildren<BoxCollider2D>().OverlapPoint(mousePosition))
-            {
-                DoLeftClick();
-                return;
-            }
-        }
+        //    if (GetComponentInChildren<BoxCollider2D>().OverlapPoint(mousePosition))
+        //    {
+        //        DoLeftClick();
+        //        return;
+        //    }
+        //}
 
-        if (Input.GetMouseButtonDown(1))
-        {
-            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        //if (Input.GetMouseButtonDown(1))
+        //{
+        //    Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            if (GetComponentInChildren<BoxCollider2D>().OverlapPoint(mousePosition))
-            {
-                DoRightClick();
-                return;
-            }
-        }
+        //    if (GetComponentInChildren<BoxCollider2D>().OverlapPoint(mousePosition))
+        //    {
+        //        DoRightClick();
+        //        return;
+        //    }
+        //}
     }
 
     private void DoLeftClick()

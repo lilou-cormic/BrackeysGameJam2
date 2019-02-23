@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level2
   m_EditorClassIdentifier: 
   Number: 2
-  DescriptionText: When a Love Cube is in love, it will rotate with the Love Cube
-    it is in love with.
-  LevelLayout: "__\r\n__\r\n__WWWWWWWWWWWWWWWW\r\n__W              W \r\n__WWW   D
-    \ U     W\r\n__W U         WWWW\r\n__W              W\r\n__WWWWWWWWWWWWWWWW\r\n__\r\n__"
+  DescriptionText: Love is blind. A Cube can fall in love with a Cube that is already
+    in love with another.
+  LevelLayout: "__\r\n__WWWWWWWWWWWW\r\n__W          W\r\n__W   R      W\r\n__W          WWWWW\r\n__W
+    \           U W\r\n__W   L      WWWWW\r\n__W          W\r\n__WWWWWWWWWWWW\r\n__"
