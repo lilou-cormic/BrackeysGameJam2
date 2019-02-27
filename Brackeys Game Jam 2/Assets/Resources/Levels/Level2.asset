@@ -15,5 +15,4 @@ MonoBehaviour:
   Number: 2
   DescriptionText: Love is blind. A Cube can fall in love with a Cube that is already
     in love with another.
-  LevelLayout: "__\r\n__WWWWWWWWWWWW\r\n__W          W\r\n__W   R      W\r\n__W          WWWWW\r\n__W
-    \           U W\r\n__W   L      WWWWW\r\n__W          W\r\n__WWWWWWWWWWWW\r\n__"
+  LevelLayout: "__\r\n__WWWWWWWWWWWW\r\n__WFFFFFFFFFFW\r\n__WFFFRFFFFFFW\r\n__WFFFFFFFFFFWWWWW\r\n__WFFFFFFFFFFFFUFW\r\n__WFFFLFFFFFFWWWWW\r\n__WFFFFFFFFFFW\r\n__WWWWWWWWWWWW\r\n__"

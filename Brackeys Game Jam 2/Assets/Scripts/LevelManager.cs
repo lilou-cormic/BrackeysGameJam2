@@ -14,6 +14,9 @@ public class LevelManager : MonoBehaviour
     private GameObject WallPrefab = null;
 
     [SerializeField]
+    private GameObject FloorPrefab = null;
+
+    [SerializeField]
     private Lovable LovablePrefab = null;
 
     [SerializeField]
@@ -79,25 +82,37 @@ public class LevelManager : MonoBehaviour
                         Instantiate(WallPrefab, new Vector3(col, -row, 0), Quaternion.identity, transform);
                         break;
 
+                    case 'F':
+                        Instantiate(FloorPrefab, new Vector3(col, -row, 0), Quaternion.identity, transform);
+                        break;
+
                     case 'U':
+                        Instantiate(FloorPrefab, new Vector3(col, -row, 0), Quaternion.identity, transform);
+
                         Lovable upLovable = Instantiate(LovablePrefab, new Vector3(col, -row, 0), Quaternion.identity, transform);
                         upLovable.SetRotation(Lovable.UpRotation);
                         Lovables++;
                         break;
 
                     case 'R':
+                        Instantiate(FloorPrefab, new Vector3(col, -row, 0), Quaternion.identity, transform);
+
                         Lovable rightLovable = Instantiate(LovablePrefab, new Vector3(col, -row, 0), Quaternion.identity, transform);
                         rightLovable.SetRotation(Lovable.RightRotation);
                         Lovables++;
                         break;
 
                     case 'D':
+                        Instantiate(FloorPrefab, new Vector3(col, -row, 0), Quaternion.identity, transform);
+
                         Lovable downLovable = Instantiate(LovablePrefab, new Vector3(col, -row, 0), Quaternion.identity, transform);
                         downLovable.SetRotation(Lovable.DownRotation);
                         Lovables++;
                         break;
 
                     case 'L':
+                        Instantiate(FloorPrefab, new Vector3(col, -row, 0), Quaternion.identity, transform);
+
                         Lovable leftLovable = Instantiate(LovablePrefab, new Vector3(col, -row, 0), Quaternion.identity, transform);
                         leftLovable.SetRotation(Lovable.LeftRotation);
                         Lovables++;

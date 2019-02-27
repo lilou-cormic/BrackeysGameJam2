@@ -15,8 +15,8 @@ TagManager:
   - 
   - Lovable
   - Hearts
-  - 
-  - 
+  - Floor
+  - Wall
   - 
   - 
   - 
@@ -38,6 +38,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Floor
+    uniqueID: 2931879927
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Wall
+    uniqueID: 2948557745
+    locked: 0
+  - name: Lovable
+    uniqueID: 1904792287
+    locked: 0
+  - name: Hearts
+    uniqueID: 3601151391
     locked: 0

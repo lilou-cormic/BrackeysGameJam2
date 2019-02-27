@@ -14,6 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Number: 4
   DescriptionText: 
-  LevelLayout: "__      WWWWWWWW\r\n__   WWWW      WWW\r\n__WWWW     D     W\r\n__W
-    \             W\r\n__W              W\r\n__W   L   U      W\r\n__W              W\r\n__WWWWWW
-    \ R  WWWWW\r\n__     W     W\r\n__     WWWWWWW"
+  LevelLayout: "__      WWWWWWWW\r\n__   WWWWFFFFFFWWW\r\n__WWWWFFFFFDFFFFFW\r\n__WFFFFFFFFFFFFFFW\r\n__WFFFFFFFFFFFFFFW\r\n__WFFFLFFFUFFFFFFW\r\n__WFFFFFFFFFFFFFFW\r\n__WWWWWWFFRFFWWWWW\r\n__
+    \    WFFFFFW\r\n__     WWWWWWW"

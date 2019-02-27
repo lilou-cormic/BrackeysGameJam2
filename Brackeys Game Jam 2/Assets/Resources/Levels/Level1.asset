@@ -15,5 +15,4 @@ MonoBehaviour:
   Number: 1
   DescriptionText: Left click or tap a Cube to rotate it clockwise. If another Cube
     is in its line of sight, it will fall in love and join it instead.
-  LevelLayout: "__\r\n__\r\n__WWWWWWWWWWWWWWWW\r\n__W              W \r\n__W   L    U
-    \ WWWW\r\n__W           W\r\n__W           W\r\n__WWWWWWWWWWWWW\r\n__\r\n__"
+  LevelLayout: "__\r\n__\r\n__WWWWWWWWWWWWWWWW\r\n__WFFFFFFFFFFFFFFW\r\n__WFFFLFFFFUFFWWWW\r\n__WFFFFFFFFFFFW\r\n__WFFFFFFFFFFFW\r\n__WWWWWWWWWWWWW\r\n__\r\n__"

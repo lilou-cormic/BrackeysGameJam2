@@ -15,5 +15,4 @@ MonoBehaviour:
   Number: 3
   DescriptionText: When a Cube is in love, it will rotate with the Cube it is in love
     with.
-  LevelLayout: "__\r\n__\r\n__WWWWWWWWWWWWWWWW\r\n__W              W \r\n__WWW   L
-    \ R     W\r\n__W U         WWWW\r\n__W              W\r\n__WWWWWWWWWWWWWWWW\r\n__\r\n__"
+  LevelLayout: "__\r\n__\r\n__WWWWWWWWWWWWWWWW\r\n__WFFFFFFFFFFFFFFW\r\n__WWWFFFLFFRFFFFFW\r\n__WFUFFFFFFFFFWWWW\r\n__WFFFFFFFFFFFFFFW\r\n__WWWWWWWWWWWWWWWW\r\n__\r\n__"
