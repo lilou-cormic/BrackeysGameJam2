@@ -1003,9 +1003,9 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: "Contains music \xA92019 Joshua McLean (mrjoshuamclean.com)\r\nLicensed
-        under Creative Commons Attribution-ShareAlike 4.0 International\n\nTools Used:\n-
-        Unity 2018.3.6f1\n- Visual Studio Community 2017 15.9.5\n- Piskel 0.14.0\n-
-        Bfxr 1.4.1"
+        under Creative Commons Attribution-ShareAlike 4.0 International\n\nMost assets
+        from Kenney.NL\n\nTools Used:\n- Unity 2018.3.6f1\n- Visual Studio Community
+        2017 15.9.5\n- Piskel 0.14.0\n- Bfxr 1.4.1"
       objectReference: {fileID: 0}
     - target: {fileID: 2048037261337923964, guid: 6e216d8a362c8cb4fb4d3a4e25d5b024,
         type: 3}
@@ -1020,22 +1020,22 @@ PrefabInstance:
     - target: {fileID: 2048037261337923964, guid: 6e216d8a362c8cb4fb4d3a4e25d5b024,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 228
+      value: 256
       objectReference: {fileID: 0}
     - target: {fileID: 2048037261337923964, guid: 6e216d8a362c8cb4fb4d3a4e25d5b024,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 30
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 2048037261337923964, guid: 6e216d8a362c8cb4fb4d3a4e25d5b024,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 40
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 2048037261337923964, guid: 6e216d8a362c8cb4fb4d3a4e25d5b024,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2048037261337923964, guid: 6e216d8a362c8cb4fb4d3a4e25d5b024,
         type: 3}
